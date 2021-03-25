@@ -15,7 +15,7 @@ class CreateTransactionTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->float('value')->default(0)->comment('Сумма транзакции');
             $table->text('description')->comment('Описание транзакции');
             $table->integer('type')->comment('Тип транзакции');

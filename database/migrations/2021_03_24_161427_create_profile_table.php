@@ -15,7 +15,7 @@ class CreateProfileTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->float('balance')->default(0)->comment('Баланс');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
