@@ -57,7 +57,7 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     }
 
     /**
-     * @return Profile
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function profile()
     {

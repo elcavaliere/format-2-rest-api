@@ -53,6 +53,8 @@ class TransactionsController extends Controller
                 'description' => $request->description
             ]);
 
+            return $transaction->user->profile;
+
             $newBalance = $transaction->type == 1 ? ($transaction->user->profile->balance + $transaction->value) : ($transaction->user->profile->balance - $transaction->value);
             $transaction->user->profile->balance = $newBalance;
             $transaction->user->profile->save();
