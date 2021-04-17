@@ -14,7 +14,11 @@
 */
 
 $router->get('/', function () use ($router) {
+
+    echo 'New branch';
+
     return $router->app->version();
+
 });
 
 $router->group(['prefix' => 'api'], function () use ($router){
