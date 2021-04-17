@@ -17,4 +17,12 @@ class Profile extends Model
     protected $fillable = [
         'user_id', 'balance',
     ];
+
+    /**
+     * Get the post that owns the comment.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

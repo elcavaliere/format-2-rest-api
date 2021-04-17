@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
         User::factory()->count(3)->create()->each(
             function ($user) {
                 Profile::factory()->count(1)->create(['user_id' => $user->id]);
-                Transaction::factory()->count(rand(1000, 2000))->create(['user_id' => $user->id]);
+//                Transaction::factory()->count(rand(1000, 2000))->create(['user_id' => $user->id]);
             }
         );
     }

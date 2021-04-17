@@ -21,7 +21,13 @@ class Transaction extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'user_id', 'value', 'description', 'type'. 'created_at',
-    ];
+    protected $guarded = [];
+
+    /**
+     * Get the post that owns the comment.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
